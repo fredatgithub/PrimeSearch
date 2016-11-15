@@ -6,7 +6,7 @@ namespace PrimeSearch
   {
     private static void Main()
     {
-      for (ulong i = 2; i < 10001; i++)
+      for (ulong i = 2; i < 50001; i++)
       {
         if (IsPrime(i))
         {
