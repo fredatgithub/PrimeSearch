@@ -5,3 +5,4 @@
 let main argv = 
     printfn "%A" argv
     0 // retourne du code de sortie entier
+    //let number = 12
