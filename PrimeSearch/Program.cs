@@ -1,9 +1,7 @@
 ﻿using System;
 
-
 namespace PrimeSearch
 {
-  using System.Data.SqlTypes;
   using System.Numerics;
 
   internal class Program
@@ -26,6 +24,18 @@ namespace PrimeSearch
       else
       {
         Console.WriteLine(number + " n'est pas premier");
+      }
+
+      for (BigInteger i = number - 50 ; i < number; i++)
+      {
+        if (IsPrime(i))
+        {
+          Console.WriteLine(i + " est premier");
+        }
+        else
+        {
+          Console.WriteLine(i + " n'est pas premier");
+        }
       }
 
       Console.WriteLine("Press a key to exit");
