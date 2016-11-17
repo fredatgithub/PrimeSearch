@@ -24,15 +24,15 @@ namespace PrimeSearch
         Console.WriteLine(number + " n'est pas premier");
       }
 
-      for (BigInteger BigIntNumber = number - 50 ; BigIntNumber < number; BigIntNumber++)
+      for (BigInteger bigIntNumber = number - 50 ; bigIntNumber < number; bigIntNumber++)
       {
-        if (IsPrime(BigIntNumber))
+        if (IsPrime(bigIntNumber))
         {
-          Console.WriteLine(BigIntNumber + " est premier");
+          Console.WriteLine(bigIntNumber + " est premier");
         }
         else
         {
-          Console.WriteLine(BigIntNumber + " n'est pas premier");
+          Console.WriteLine(bigIntNumber + " n'est pas premier");
         }
       }
 
