@@ -1,9 +1,7 @@
 ﻿using System;
-
+using System.Numerics;
 namespace PrimeSearch
 {
-  using System.Numerics;
-
   internal class Program
   {
     private static void Main()
@@ -26,15 +24,15 @@ namespace PrimeSearch
         Console.WriteLine(number + " n'est pas premier");
       }
 
-      for (BigInteger i = number - 50 ; i < number; i++)
+      for (BigInteger BigIntNumber = number - 50 ; BigIntNumber < number; BigIntNumber++)
       {
-        if (IsPrime(i))
+        if (IsPrime(BigIntNumber))
         {
-          Console.WriteLine(i + " est premier");
+          Console.WriteLine(BigIntNumber + " est premier");
         }
         else
         {
-          Console.WriteLine(i + " n'est pas premier");
+          Console.WriteLine(BigIntNumber + " n'est pas premier");
         }
       }
 
@@ -59,9 +57,9 @@ namespace PrimeSearch
         return false;
       }
 
-      for (ulong i = 6; i < Math.Sqrt(number); i = i + 2)
+      for (ulong tmpDivisor = 6; tmpDivisor < Math.Sqrt(number); tmpDivisor = tmpDivisor + 2)
       {
-        if (number % i == 0)
+        if (number % tmpDivisor == 0)
         {
           return false;
         }
@@ -93,9 +91,9 @@ namespace PrimeSearch
       }
 
       var tmpSqr = Math.Exp(BigInteger.Log(number) / 2);
-      for (ulong i = 6; i < tmpSqr; i = i + 2)
+      for (ulong divisor = 6; divisor < tmpSqr; divisor = divisor + 2)
       {
-        if (number % i == 0)
+        if (number % divisor == 0)
         {
           return false;
         }
