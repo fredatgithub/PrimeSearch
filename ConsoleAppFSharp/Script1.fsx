@@ -1,4 +1,17 @@
-﻿// Storing integers and strings.
+﻿let rec factorielle1 n =
+    match n with
+    | 0 -> 1
+    | _ -> n * factorielle1 (n - 1)
+
+let factorielle n =
+    let rec factorielle_recursive n accu =
+        match n with
+        | 0 -> accu
+        | _ -> factorielle_recursive (n - 1) (n * accu)
+    factorielle_recursive n 1
+
+
+// Storing integers and strings.
 let integerList = [ 1; 2; 3; 4; 5; 6; 7 ]
 let stringList = [ "one"; "two"; "three" ]
 
