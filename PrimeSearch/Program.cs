@@ -15,16 +15,8 @@ namespace PrimeSearch
       }
 
       BigInteger number = new BigInteger(ulong.MaxValue);
-      if (IsPrime(number))
-      {
-        Console.WriteLine(number + " est premier");
-      }
-      else
-      {
-        Console.WriteLine(number + " n'est pas premier");
-      }
-
-      for (BigInteger bigIntNumber = number - 50 ; bigIntNumber < number; bigIntNumber++)
+      
+      for (BigInteger bigIntNumber = number - 50 ; bigIntNumber <= number; bigIntNumber++)
       {
         if (IsPrime(bigIntNumber))
         {

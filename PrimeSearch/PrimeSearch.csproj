@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PrimeList\primes-2-100000.txt" />
-    <Content Include="Primes.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
