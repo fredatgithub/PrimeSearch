@@ -49,9 +49,9 @@ namespace PrimeSearch
         return false;
       }
 
-      for (ulong tmpDivisor = 6; tmpDivisor < Math.Sqrt(number); tmpDivisor = tmpDivisor + 2)
+      for (ulong divisor = 6; divisor < Math.Sqrt(number); divisor = divisor + 2)
       {
-        if (number % tmpDivisor == 0)
+        if (number % divisor == 0)
         {
           return false;
         }
