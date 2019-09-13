@@ -6,30 +6,41 @@ namespace PrimeSearch
   {
     private static void Main()
     {
-      for (ulong i = 2; i < 50001; i++)
+      ulong upperLimitNumber = 20;
+      for (ulong i = 2; i < upperLimitNumber; i++)
       {
         if (IsPrime(i))
         {
-          Console.WriteLine(i);
+          Console.WriteLine($"{i} {Negate("est", true)} premier");
+        }
+        else
+        {
+          Console.WriteLine($"{i} {Negate("est", false)} premier");
         }
       }
 
       BigInteger number = new BigInteger(ulong.MaxValue);
-      
-      for (BigInteger bigIntNumber = number - 50 ; bigIntNumber <= number; bigIntNumber++)
+      bool positiveness = false;
+      for (BigInteger bigIntNumber = number - 1; bigIntNumber <= number; bigIntNumber++)
       {
-        if (IsPrime(bigIntNumber))
-        {
-          Console.WriteLine(bigIntNumber + " est premier");
-        }
-        else
-        {
-          Console.WriteLine(bigIntNumber + " n'est pas premier");
-        }
+        positiveness = IsPrime(bigIntNumber);
+        Console.WriteLine($"{bigIntNumber} {Negate("est", positiveness)} premier");
       }
 
       Console.WriteLine("Press a key to exit");
       Console.ReadKey();
+    }
+
+    private static string Negate(string verb, bool positive)
+    {
+      if (positive)
+      {
+        return verb;
+      }
+      else
+      {
+        return $"n'{verb} pas";
+      }
     }
 
     private static bool IsPrime(ulong number)
@@ -83,7 +94,7 @@ namespace PrimeSearch
       }
 
       var tmpSqr = Math.Exp(BigInteger.Log(number) / 2);
-      for (ulong divisor = 6; divisor < tmpSqr; divisor = divisor + 2)
+      for (ulong divisor = 7; divisor < tmpSqr; divisor = divisor + 2)
       {
         if (number % divisor == 0)
         {
