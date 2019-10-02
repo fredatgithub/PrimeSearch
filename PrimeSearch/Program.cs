@@ -60,7 +60,7 @@ namespace PrimeSearch
         return false;
       }
 
-      for (ulong divisor = 6; divisor < Math.Sqrt(number); divisor = divisor + 2)
+      for (ulong divisor = 7; divisor < Math.Sqrt(number); divisor = divisor + 2)
       {
         if (number % divisor == 0)
         {
