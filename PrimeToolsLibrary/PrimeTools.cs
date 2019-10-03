@@ -27,7 +27,7 @@ namespace PrimeToolsLibrary
         return false;
       }
 
-      for (ulong divisor = 7; divisor < Math.Sqrt(number); divisor = divisor + 2)
+      for (ulong divisor = 7; divisor < Math.Sqrt(number); divisor += 2)
       {
         if (number % divisor == 0)
         {
@@ -60,8 +60,8 @@ namespace PrimeToolsLibrary
         return false;
       }
 
-      var tmpSqr = Math.Exp(BigInteger.Log(number) / 2);
-      for (ulong divisor = 7; divisor < tmpSqr; divisor = divisor + 2)
+      var squareRoot = Math.Exp(BigInteger.Log(number) / 2);
+      for (ulong divisor = 7; divisor < squareRoot; divisor += 2)
       {
         if (number % divisor == 0)
         {
@@ -71,6 +71,5 @@ namespace PrimeToolsLibrary
 
       return true;
     }
-
   }
 }
